@@ -1,23 +1,52 @@
-Call:
-lm(formula = mpg ~ `vehicle length` + `vehicle weight` + `spoiler angle` + 
-    `ground clearance` + AWD, data = MechaCar)
+MPG Regression
 
-Residuals:
-     Min       1Q   Median       3Q      Max 
--19.4701  -4.4994  -0.0692   5.4433  18.5849 
+After running multiple regression models, we are able to determine that car length and ground clearance had the clearest positive correlation to mpg. We calculated P-values of 9.56 (length v MPG) and 6.55 (Clearance v MPG) respectively.
 
-Coefficients:
-                     Estimate Std. Error t value Pr(>|t|)    
-(Intercept)        -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
-`vehicle length`    6.267e+00  6.553e-01   9.563 2.60e-12 ***
-`vehicle weight`    1.245e-03  6.890e-04   1.807   0.0776 .  
-`spoiler angle`     6.877e-02  6.653e-02   1.034   0.3069    
-`ground clearance`  3.546e+00  5.412e-01   6.551 5.21e-08 ***
-AWD                -3.411e+00  2.535e+00  -1.346   0.1852    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 8.774 on 44 degrees of freedom
-Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
-F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+
+
+Compare these models to other below which don�t have a clear correlation.
+
+
+
+Suspension Coil Summary
+
+When going through analysis of 150 suspension coils we find the following statistics:
+MEAN: 1498.78
+MEDIAN: 1500
+VARIANCE: 62.29
+STANDARD DEVIATION: 7.89
+
+We can conclude this data set to have normal distribution.  We find that the data shows that the suspension coils do not exceed 100 lbs/inch.
+
+Suspension Coil T-Test
+We show the following results for a One sample t-test:
+
+data:  (coil_sample_table$PSI)
+t = 1.6207, df = 49, p-value = 0.1115
+alternative hypothesis: true mean is not equal to 1498.78
+95 percent confidence interval:
+ 1498.348 1502.812
+sample estimates:
+mean of x 
+  1500.58
+
+We also show the following for a Two sample t-test:
+
+data:  (coil_sample_table$PSI) and (coil_sample_table2$PSI)
+t = 1.4277, df = 97.977, p-value = 0.1566
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.8813272  5.4013272
+sample estimates:
+mean of x mean of y 
+  1500.58   1498.32
+
+
+
+
+
+
+
 
